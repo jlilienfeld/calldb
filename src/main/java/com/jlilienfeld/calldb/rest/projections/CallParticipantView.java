@@ -10,4 +10,6 @@ public interface CallParticipantView {
     String getPersonRole();
     @Value("#{target.getPerson().getFullName()}")
     String getPersonName();
+    @Value("#{target.getPerson().getId()}")
+    long getId();
 }
