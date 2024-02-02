@@ -1,5 +1,5 @@
 FROM eclipse-temurin:17.0.5_8-jre-ubi9-minimal as builder
-ARG JAR_FILE=target/budget-backend*.jar
+ARG JAR_FILE=target/*.jar
 COPY ${JAR_FILE} application.jar
 RUN java -Djarmode=layertools -jar application.jar extract
 
