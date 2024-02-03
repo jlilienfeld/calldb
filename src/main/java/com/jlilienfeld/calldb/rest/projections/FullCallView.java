@@ -10,7 +10,7 @@ import java.util.List;
 @Projection(name = "fullCallView", types = { CallEntity.class })
 public interface FullCallView {
     @Value("#{target.getId()}")
-    String getCallId();
+    String getId();
 
     @Value("#{target.getCity().getName()}")
     String getCityName();
@@ -21,6 +21,8 @@ public interface FullCallView {
     Date getCallDate();
     Date getStartTime();
     Date getEndTime();
+
+    int getDuration();
 
     List<CallParticipantView> getPersons();
 }

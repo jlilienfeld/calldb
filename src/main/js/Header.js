@@ -9,7 +9,9 @@ export class Header extends React.Component {
     }
 
     onCurrentPersonChanged(event) {
-        this.props.onCurrentPersonChanged(event.target.value);
+        const person = this.props.persons.find(person => person.id === parseInt(event.target.value));
+
+        this.props.onCurrentPersonChanged(person);
     }
 
     render() {
