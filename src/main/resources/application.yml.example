@@ -4,10 +4,29 @@ spring:
     #show-sql: true
     hibernate:
       ddl-auto: update
+  data:
+    rest:
+      base-path: /api
   datasource:
-    url: jdbc:mysql://<DB address>:3306/database_name
-    username: username
-    password: password
+    url: jdbc:mysql://<DatabaseHostName>:3306/<Database Name>
+    username: <Username>
+    password: <Password>
     driver-class-name: com.mysql.cj.jdbc.Driver
 springdoc:
-  api-docs.path: /api-docs
+  api-docs:
+    path: /api-docs
+server:
+  port: 443
+  ssl:
+    enabled: true
+# NOTE: dev-only-cert is provided only so developers won't need to configure their own self-signed certs from scratch.
+#       This MUST be set to a proper TLS certificate in production
+    certificate: "classpath:dev-only-cert.crt"
+    certificate-private-key: "classpath:dev-only-cert.key"
+# NOTE: This application doesn't authenticate any endpoints, UNLESS the following is set.
+#       This MUST be set in a production environment.
+#okta:
+#  oauth2:
+#    issuer: https://<domain>.<country>.auth0.com/
+#    client-id: <client-id>
+#    client-secret: <client-secret>

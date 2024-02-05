@@ -1,7 +1,7 @@
 package com.jlilienfeld.calldb.rest.repositories;
 
-import com.jlilienfeld.calldb.rest.model.CityEntity;
-import com.jlilienfeld.calldb.rest.model.ParticipantRoleEntity;
+import com.jlilienfeld.calldb.rest.model.entities.CityEntity;
+import com.jlilienfeld.calldb.rest.model.entities.ParticipantRoleEntity;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.ListPagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;

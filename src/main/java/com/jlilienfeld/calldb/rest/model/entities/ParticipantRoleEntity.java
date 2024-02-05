@@ -1,4 +1,4 @@
-package com.jlilienfeld.calldb.rest.model;
+package com.jlilienfeld.calldb.rest.model.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.jlilienfeld.calldb.rest.model;
+package com.jlilienfeld.calldb.rest.model.entities;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -6,7 +6,6 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Index;
-import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,17 +13,15 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.hibernate.annotations.GenericGenerator;
 
-import java.util.List;
-
-@Entity(name = "person")
-@Table(name = "persons" ,
+@Entity(name = "city")
+@Table(name = "cities" ,
         indexes = {
-            @Index(name = "persons_person_full_name_index",  columnList="person_full_name", unique = true)})
+                @Index(name = "cities_pk_2",  columnList="city_name", unique = true)})
 @Getter
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
-public class PersonEntity {
+public class CityEntity {
     @Id
     @GeneratedValue(
             strategy= GenerationType.AUTO,
@@ -33,12 +30,9 @@ public class PersonEntity {
             name = "native",
             strategy = "native"
     )
-    @Column(name="person_id")
-    private long id;
+    @Column(name="city_id")
+    private int id;
 
-    @Column(nullable = false, name="person_full_name")
-    private String fullName;
-
-    @OneToMany(mappedBy = "person")
-    private List<CallPersonAssociationEntity> calls;
+    @Column(nullable = false, name="city_name")
+    private String name;
 }

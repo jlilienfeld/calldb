@@ -1,10 +1,10 @@
 package com.jlilienfeld.calldb;
 
-import com.jlilienfeld.calldb.rest.model.CallEntity;
-import com.jlilienfeld.calldb.rest.model.CallMethodEntity;
-import com.jlilienfeld.calldb.rest.model.CityEntity;
-import com.jlilienfeld.calldb.rest.model.ParticipantRoleEntity;
-import com.jlilienfeld.calldb.rest.model.PersonEntity;
+import com.jlilienfeld.calldb.rest.model.entities.CallEntity;
+import com.jlilienfeld.calldb.rest.model.entities.CallMethodEntity;
+import com.jlilienfeld.calldb.rest.model.entities.CityEntity;
+import com.jlilienfeld.calldb.rest.model.entities.ParticipantRoleEntity;
+import com.jlilienfeld.calldb.rest.model.entities.PersonEntity;
 import org.springframework.data.rest.core.config.RepositoryRestConfiguration;
 import org.springframework.data.rest.webmvc.config.RepositoryRestConfigurer;
 import org.springframework.stereotype.Component;

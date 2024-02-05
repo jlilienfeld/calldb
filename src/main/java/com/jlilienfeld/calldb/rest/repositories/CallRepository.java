@@ -1,6 +1,6 @@
 package com.jlilienfeld.calldb.rest.repositories;
 
-import com.jlilienfeld.calldb.rest.model.CallEntity;
+import com.jlilienfeld.calldb.rest.model.entities.CallEntity;
 import com.jlilienfeld.calldb.rest.projections.FullCallView;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.ListPagingAndSortingRepository;
