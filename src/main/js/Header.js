@@ -1,4 +1,5 @@
 import React from 'react';
+import Combobox from "react-widgets/Combobox";
 
 export class Header extends React.Component {
 
@@ -6,12 +7,21 @@ export class Header extends React.Component {
         super(props);
 
         this.onCurrentPersonChanged = this.onCurrentPersonChanged.bind(this);
+        this.onPersonComboboxChanged = this.onPersonComboboxChanged.bind(this);
     }
 
     onCurrentPersonChanged(event) {
         const person = this.props.persons.find(person => person.id === parseInt(event.target.value));
 
         this.props.onCurrentPersonChanged(person);
+    }
+
+    onPersonComboboxChanged(event) {
+        if (typeof event === 'string' || event instanceof String) {
+            this.props.onCurrentPersonSearchChanged(event);
+        } else {
+            this.props.onCurrentPersonChanged(event);
+        }
     }
 
     render() {
@@ -25,24 +35,20 @@ export class Header extends React.Component {
 
                         {/* Header: Left side */}
                         <div className="flex items-center">
-                            <label className="block text-sm font-medium mb-1 mr-5" htmlFor="name">Show call for this person: </label>
+                            <label className="block text-slate-100 text-lg mb-1 mr-5" htmlFor="name">Show call for this person: </label>
 
-                            <select onChange={this.onCurrentPersonChanged} id="selected-person" className="form-select bg-slate-400">
-                                {persons.map((person => {
-                                    const personFullName = person.fullName;
-
-                                    return (
-                                        <option value={person.id} key={person.id}>{personFullName}</option>);
-                                }))
-                                }
-                            </select>
+                            <div>
+                                <Combobox
+                                    onChange={this.onPersonComboboxChanged}
+                                    dataKey='id'
+                                    textField='fullName'
+                                    data={persons}
+                                />
+                            </div>
                         </div>
 
                         {/* Header: Right side */}
                         <div className="flex items-center space-x-3">
-                            <div>
-                                Place Holder 1
-                            </div>
                             <div>
                                 Place Holder 2
                             </div>
