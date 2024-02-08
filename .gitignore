@@ -37,6 +37,7 @@ package-lock.json
 
 /.idea/
 target
+scratch_space/
 
 src/main/resources/application.yml
 
