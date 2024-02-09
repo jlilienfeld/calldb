@@ -22,7 +22,13 @@ spec:
           - mountPath: /config
             name: calldb-config
             readOnly: true
+          - mountPath: /cert
+            name: web-crt
+            readOnly: true
       volumes:
       - name: calldb-config
         secret:
           secretName: calldb-config
+      - name: web-crt
+        secret:
+          secretName: web-crt
