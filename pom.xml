@@ -9,7 +9,7 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jlilienfeld</groupId>
-	<artifactId>vatnik-book</artifactId>
+	<artifactId>calldb-book</artifactId>
 	<version>0.1.0</version>
 	<name>call-database-backend</name>
 	<description>Backend for a call database.</description>
