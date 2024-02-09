@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: calldb
+  labels:
+    app: calldb
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: calldb
+  template:
+    metadata:
+      labels:
+        app: calldb
+    spec:
+      containers:
+        - name: calldb
+          image: ghcr.io/jlilienfeld/calldb:0.1.0
+          imagePullPolicy: Always
+          volumeMounts:
+          - mountPath: /config
+            name: calldb-config
+            readOnly: true
+      volumes:
+      - name: calldb-config
+        secret:
+          secretName: calldb-config
