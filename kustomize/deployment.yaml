@@ -18,6 +18,9 @@ spec:
         - name: calldb
           image: ghcr.io/jlilienfeld/calldb:0.1.0
           imagePullPolicy: Always
+          env:
+          - name: JAVA_OPTS
+            value: -Dspring.config.location=file:/config/application.yml
           volumeMounts:
           - mountPath: /config
             name: calldb-config
